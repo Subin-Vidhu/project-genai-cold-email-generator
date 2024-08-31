@@ -4,8 +4,8 @@ import uuid
 
 
 class Portfolio:
-    def __init__(self, file_path=r"D:\2024\project-genai-cold-email-generator\app\portfolio.py"):
-        self.file_path = file_path
+    def __init__(self, file_path=r"D:\2024\project-genai-cold-email-generator\app\resource\my_portfolio.csv"):
+        self.file_path = r"D:\2024\project-genai-cold-email-generator\app\resource\my_portfolio.csv"
         self.data = pd.read_csv(file_path)
         self.chroma_client = chromadb.PersistentClient('vectorstore')
         self.collection = self.chroma_client.get_or_create_collection(name="portfolio")
